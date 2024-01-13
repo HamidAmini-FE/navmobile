@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        min-width: 1350px;
+        height: 70px;
+        margin-top: 100px;
+        /* border: 1px solid #000; */
+        /* background-color: #000000; */
+      }
+      .header {
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        /* background-color: #000; */
+        min-width: 1280px;
+      }
+      .logo-header {
+        /* height: 100%; */
+        /* border: 1px solid #000; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        color: red;
+      }
+      .nav-header {
+        /* border: 1px solid #000; */
+        width: 50%;
+      }
+      .nav-header .menu {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .nav-header li {
+        width: 100%;
+        height: 100%;
+      }
+      .nav-header a {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .active {
+        background-color: blue;
+        border-radius: 10px;
+        color: aliceblue;
+      }
+      .nav-mobile {
+        /* border: 1px solid #000; */
+        width: 10%;
+        display: flex;
+        justify-content: center;
+        display: none;
+      }
+      .list-nav-mobile {
+        position: fixed;
+        left: 0%;
+        top: 0;
+        background-color: #d6d6d6;
+        width: 220px;
+        height: 100%;
+      }
+      .list-nav-mobile li {
+        width: 100%;
+        /* border: 1px solid #ffffff; */
+      }
+      .list-nav-mobile a {
+        display: block;
+        padding: 20px;
+        line-height: 55px;
+        text-align: center;
+      }
+    </style>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="logo-header">Learning</div>
+        <div class="nav-header">
+          <ul class="menu">
+            <li class="item"><a href="">item1</a></li>
+            <li class="item"><a href="">item2</a></li>
+            <li class="item"><a href="">item3</a></li>
+            <li class="item"><a href="">item4</a></li>
+            <li class="item"><a href="">item5</a></li>
+            <li class="item"><a href="" class="active">item6</a></li>
+          </ul>
+        </div>
+        <div class="nav-mobile">
+          <input type="checkbox" name="check" id="toggle-menu" hidden/>
+          <label for="toggle-menu">
+            <span class="line top"></span>
+            <span class="line mid"></span>
+            <span class="line btm"></span>
+          </label>
+          <ul class="list-nav-mobile">
+            <li class="item"><a href="">item1</a></li>
+            <li class="item"><a href="">item2</a></li>
+            <li class="item"><a href="">item3</a></li>
+            <li class="item"><a href="">item4</a></li>
+            <li class="item"><a href="">item5</a></li>
+            <li class="item"><a href="" class="active">item6</a></li>
+          </ul>
+        </div>
+      </header>
+    </div>
+  </body>
+</html>
+
+<style>
+  @media screen and (max-width: 1280px) {
+    .header {
+      justify-content: center;
+    }
+  }
+  @media screen and (max-width: 900px) {
+    .header {
+      justify-content: center;
+    }
+    .nav-header {
+      display: none;
+    }
+    .nav-mobile {
+      display: block;
+      display: flex;
+    }
+    #toggle-menu:checked + label + .list-nav-mobile {
+      left: -100%;
+      transition: 0.4s;
+    }
+    label{
+      /* border: 1px solid #000; */
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    label span {
+      margin: 3px;
+      display: flex;
+      align-items: center;
+      width: 35px;
+      border: 3px solid #ff0000;
+      cursor: pointer;
+    }
+    .header span{
+      transition: .4s;
+    }
+  .header #toggle-menu:checked + label .top{
+      transform: rotate(45deg) translateY(16px);
+  }
+  .header #toggle-menu:checked + label .mid{
+      transform: translate(45px);
+      opacity: 0;
+  }
+  .header #toggle-menu:checked + label .btm{
+      transform: rotate(-45deg) translateY(-15px);
+  }
+}
+</style>
